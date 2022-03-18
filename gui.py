@@ -14,6 +14,7 @@ global slope
 global y_intercept
 slope = ttk.Label(text="Slope").place(x=70,y=70)
 y_intercept = ttk.Label(text="Y Intercept").place(x=40,y=120)
+label = ttk.Label(text="Close gui to see graph", font="arial").place(x=150,y=350)
 
 m = ttk.Entry(window)
 b = ttk.Entry(window)
@@ -44,8 +45,8 @@ def graph():
     
     x = np.linspace(-5,5,100) # Density of numbers in between
     y = slope2*x+y_intercept2 # Equation
-    plt.plot(x, y, '-r', label='y=2x+1')
-    plt.title('Graph of y=2x+1')
+    plt.plot(x, y, '-r', label=f'y={slope2}x+{y_intercept2}')
+    plt.title(f'Graph of y=mx+b')
     plt.xlabel('x', color='#1C2833')
     plt.ylabel('y', color='#1C2833')
     plt.legend(loc='upper left')
